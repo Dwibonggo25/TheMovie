@@ -29,7 +29,7 @@ class LoginFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         binding.apply {
             fragment = this@LoginFragment

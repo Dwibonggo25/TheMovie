@@ -2,7 +2,10 @@ package com.example.jetpack
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import com.example.jetpack.databinding.ActivityMainBinding
 import com.example.jetpack.ui.LoginViewModel
 import dagger.android.AndroidInjection
@@ -29,8 +32,18 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        initBinding()
+
+        val host = NavHostFragment.create(R.navigation.navigation)
+        supportFragmentManager.beginTransaction().replace(R.id.main_nav_fragment, host).setPrimaryNavigationFragment(host).commit()
     }
+
+    private fun initBinding() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.executePendingBindings()
+    }
+
+    override fun onSupportNavigateUp(): Boolean = Navigation.findNavController(this, R.id.container).navigateUp()
 
     override fun onDestroy() {
         super.onDestroy()

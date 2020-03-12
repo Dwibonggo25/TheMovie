@@ -1,6 +1,7 @@
 package com.example.jetpack.di.module
 
 import android.app.Application
+import com.example.jetpack.API_KEY
 import com.example.jetpack.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -12,6 +13,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
+import okhttp3.HttpUrl
+
+
 
 @Module
 class NetworkModule {
@@ -39,6 +43,7 @@ class NetworkModule {
         httpClient.addInterceptor { chain ->
             val original = chain.request()
             val request = original.newBuilder().build()
+
             chain.proceed(request)
         }
             .connectTimeout(100, TimeUnit.SECONDS)
