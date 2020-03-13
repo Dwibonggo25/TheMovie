@@ -11,6 +11,9 @@ buildscript {
         retrofit_version = '2.3.0'
         retrofit_logging_interceptor_version = '3.9.1'
         glide_version = '4.9.0'
+        idling_resource = '3.0.2'
+        mockitoVersion = '3.2.4'
+        mockitoTestVersion = '3.2.4'
     }
 
     repositories {

@@ -1,7 +1,6 @@
 package com.example.jetpack.ui.movies
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,7 +14,6 @@ import com.example.jetpack.R
 import com.example.jetpack.Result
 import com.example.jetpack.databinding.FragmentMoviesBinding
 import com.example.jetpack.model.ListMovies
-import com.example.jetpack.ui.LoginViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 

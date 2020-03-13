@@ -3,14 +3,8 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/navigation"
-            app:startDestination="@id/tvShowsFragment">
+            app:startDestination="@id/homeFragment">
 
-    <fragment android:id="@+id/loginFragment"
-              android:name="com.example.jetpack.ui.LoginFragment"
-              android:label="fragment_login"
-              tools:layout="@layout/fragment_login"/>
-    <fragment android:id="@+id/splashScreenFragment" android:name="com.example.jetpack.ui.splashscreen.SplashScreenFragment"
-              android:label="fragment_splash_screen" tools:layout="@layout/fragment_splash_screen"/>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.jetpack.ui.home.HomeFragment"
