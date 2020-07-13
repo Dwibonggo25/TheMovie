@@ -14,5 +14,6 @@ data class NowPlayingData(
     val popularity: Double,
     val poster_path: String,
     val title: String,
-    val vote_average: Double
+    val vote_average: Double,
+    val overview: String
 )

@@ -11,11 +11,13 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.jetpack.databinding.ActivityMainBinding
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import io.reactivex.disposables.CompositeDisposable
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     private fun setupBottomNavigation() {
-        navController.addOnDestinationChangedListener(navigationListener)
+        bottomNavigationView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener(navigationListener)
     }
 
@@ -81,6 +83,11 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                     showToolbarBackArrow(true)
                 }
                 R.id.proffileFragment -> {
+                    showBottomNavigation(true)
+                    showToolbar(false)
+                    showToolbarBackArrow(false)
+                }
+                R.id.detailMoviesFragment -> {
                     showBottomNavigation(true)
                     showToolbar(false)
                     showToolbarBackArrow(false)
@@ -126,7 +133,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     private fun showExitAppConfirmation() {
-        val builder = AlertDialog.Builder(this)
+        AlertDialog.Builder(this)
             .setTitle("Keluar")
             .setMessage("Mau yang mana")
             .setPositiveButton(android.R.string.yes) { dialogInterface, i ->
@@ -134,10 +141,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                 finish()
             }
             .setNegativeButton(android.R.string.no) { dialogInterface, i -> dialogInterface.dismiss()  }
-
-        val dialog = builder.create()
-
-        dialog.show()
+            .show()
 
     }
 

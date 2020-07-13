@@ -3,7 +3,7 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/navigation"
-            app:startDestination="@id/homeFragment">
+            app:startDestination="@id/detailMoviesFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -40,4 +40,9 @@
         android:name="com.example.jetpack.ui.profile.ProffileFragment"
         android:label="fragment_proffile"
         tools:layout="@layout/fragment_proffile" />
+    <fragment
+        android:id="@+id/detailMoviesFragment"
+        android:name="com.example.jetpack.ui.detailmovies.DetailMoviesFragment"
+        android:label="fragment_detail_movies"
+        tools:layout="@layout/fragment_detail_movies" />
 </navigation>

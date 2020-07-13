@@ -10,8 +10,23 @@
         />
 
     <item
+        android:id="@+id/popularMoviesFragment"
+        android:icon="@drawable/ic_favorite"
+        android:title="favorite"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/topRatedMoviesFragment"
+        android:icon="@drawable/ic_ranking"
+        android:title="Ranking"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/proffileFragment"
         android:icon="@drawable/ic_profile"
         android:title="Profile"
         app:showAsAction="ifRoom"/>
+
+
+
+
 </menu>
