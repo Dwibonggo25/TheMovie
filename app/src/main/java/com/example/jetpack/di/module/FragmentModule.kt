@@ -1,5 +1,6 @@
 package com.example.jetpack.di.module
 
+import com.example.jetpack.ui.detailmovies.DetailMoviesFragment
 import com.example.jetpack.ui.home.HomeFragment
 import com.example.jetpack.ui.popular.PopularMoviesFragment
 import com.example.jetpack.ui.toprated.TopRatedFragment
@@ -17,5 +18,8 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributesTvShowsFragment(): TopRatedFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesDetailMoviesFragment(): DetailMoviesFragment
 
 }

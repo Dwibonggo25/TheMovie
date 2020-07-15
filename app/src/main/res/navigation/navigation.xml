@@ -3,7 +3,7 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/navigation"
-            app:startDestination="@id/detailMoviesFragment">
+            app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -29,12 +29,20 @@
         android:id="@+id/popularMoviesFragment"
         android:name="com.example.jetpack.ui.popular.PopularMoviesFragment"
         android:label="Favorite"
-        tools:layout="@layout/fragment_popular_movies" />
+        tools:layout="@layout/fragment_popular_movies" >
+        <action
+            android:id="@+id/actionPopularToDetailMoviesFragmentLaunch"
+            app:destination="@id/detailMoviesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/topRatedMoviesFragment"
         android:name="com.example.jetpack.ui.toprated.TopRatedFragment"
         android:label="Top Rated"
-        tools:layout="@layout/fragment_top_rated_movies" />
+        tools:layout="@layout/fragment_top_rated_movies" >
+        <action
+            android:id="@+id/actionTopRatedToDetailMoviesLaunch"
+            app:destination="@id/detailMoviesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/proffileFragment"
         android:name="com.example.jetpack.ui.profile.ProffileFragment"
@@ -44,5 +52,9 @@
         android:id="@+id/detailMoviesFragment"
         android:name="com.example.jetpack.ui.detailmovies.DetailMoviesFragment"
         android:label="fragment_detail_movies"
-        tools:layout="@layout/fragment_detail_movies" />
+        tools:layout="@layout/fragment_detail_movies" >
+        <argument
+            android:name="movieId"
+            app:argType="string" />
+    </fragment>
 </navigation>

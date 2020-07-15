@@ -1,9 +1,6 @@
 package com.example.jetpack.api
 
-import com.example.jetpack.model.MoviesResponse
-import com.example.jetpack.model.NowPlayingMoviesResponse
-import com.example.jetpack.model.TvMoviesResponse
-import com.example.jetpack.model.UpcomingResponse
+import com.example.jetpack.model.*
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -21,4 +18,7 @@ interface ApiService {
 
     @GET("movie/upcoming")
     suspend fun fetchUpcomingMovies (@Query("api_key") apiKey: String) : UpcomingResponse
+
+    @GET("movie/{movie_id}}")
+    suspend fun fetchDetailMovies (@Query("api_key") apiKey: String, @Query("movie_id") movieId: String) : DetailMoviesResponse
 }

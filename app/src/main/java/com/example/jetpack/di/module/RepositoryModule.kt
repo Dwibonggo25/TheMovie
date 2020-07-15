@@ -2,6 +2,7 @@ package com.example.jetpack.di.module
 
 import com.example.jetpack.AppDatabase
 import com.example.jetpack.api.ApiService
+import com.example.jetpack.repository.DetailMoviesRepository
 import com.example.jetpack.repository.HomeRepository
 import com.example.jetpack.repository.PopularMoviesRepository
 import com.example.jetpack.repository.TopRatedRepository
@@ -28,4 +29,7 @@ class RepositoryModule {
     @Singleton
     fun providesHomeRepository(apiService: ApiService): HomeRepository = HomeRepository(apiService)
 
+    @Provides
+    @Singleton
+    fun providesDetailMoviesRepository(apiService: ApiService): DetailMoviesRepository = DetailMoviesRepository(apiService)
 }
