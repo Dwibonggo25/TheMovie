@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.jetpack.di.ViewModelFactory
 import com.example.jetpack.di.ViewModelKey
 import com.example.jetpack.ui.detailmovies.DetailMoviesViewmodel
+import com.example.jetpack.ui.favorite.FavoriteViewmodel
 import com.example.jetpack.ui.home.HomeViewModel
 import com.example.jetpack.ui.popular.PopularMoviesViewmodel
 import com.example.jetpack.ui.toprated.TopRatedViewmodel
@@ -37,4 +38,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(DetailMoviesViewmodel::class)
     internal abstract fun providesDetailMoviesViewmodel(viewModel : DetailMoviesViewmodel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FavoriteViewmodel::class)
+    internal abstract fun providesFavoriteViewmodel(viewModel : FavoriteViewmodel) : ViewModel
 }

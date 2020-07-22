@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.jetpack.R
 import com.example.jetpack.Result
 import com.example.jetpack.databinding.FragmentTopRatedMoviesBinding
@@ -16,7 +17,7 @@ import com.example.jetpack.model.ListTvMovies
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-class TopRatedFragment : Fragment() {
+class TopRatedFragment : Fragment(), TopRatedAdapter.OnTopRatedPressed {
 
     private lateinit var binding : FragmentTopRatedMoviesBinding
 
@@ -60,7 +61,7 @@ class TopRatedFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        adapter = TopRatedAdapter(listOf())
+        adapter = TopRatedAdapter(listOf(), this)
         binding.rvTvShows.adapter = adapter
     }
 
@@ -71,6 +72,11 @@ class TopRatedFragment : Fragment() {
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
+    }
+
+    override fun onTopRatedClicked(movieId: String) {
+        val action = TopRatedFragmentDirections.actionTopRatedToDetailMoviesLaunch(movieId)
+        findNavController().navigate(action)
     }
 
 }

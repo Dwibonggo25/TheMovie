@@ -1,24 +1,25 @@
 package com.example.jetpack.ui.home
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.example.jetpack.R
 import com.example.jetpack.Result
 import com.example.jetpack.databinding.FragmentHomeBinding
 import com.example.jetpack.model.NowPlayingData
 import com.example.jetpack.model.UpcomingData
-import com.example.jetpack.ui.toprated.TopRatedAdapter
-import com.example.jetpack.ui.toprated.TopRatedViewmodel
 import com.example.jetpack.utils.plusAssign
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.Observable
@@ -28,7 +29,7 @@ import io.reactivex.observers.DisposableObserver
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), NowPlayingAdapter.OnNowPlayingPressed {
 
     lateinit var binding : FragmentHomeBinding
     private lateinit var viewmodel : HomeViewModel
@@ -36,6 +37,7 @@ class HomeFragment : Fragment() {
     private lateinit var upcommingAdapter : HomeMoviesAdapter
     private lateinit var viewPager: ViewPager
     private val compositeDisposable = CompositeDisposable()
+    private var isClicked : Boolean = false
 
     companion object {
         const val SWIPE_INTERVAL = 8000L
@@ -53,16 +55,6 @@ class HomeFragment : Fragment() {
             executePendingBindings()
         }
         return binding.root
-    }
-
-    fun onFavoriteFilmClick() {
-        val action = HomeFragmentDirections.popularMoviesFragmentLaunch()
-        findNavController().navigate(action)
-    }
-
-    fun onTopRatedFilmClick() {
-        val action = HomeFragmentDirections.topRatedMoviesFragmentLaunch()
-        findNavController().navigate(action)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -93,10 +85,11 @@ class HomeFragment : Fragment() {
             it?.let {
                 when (it) {
                     is Result.Loading -> {
-
+                        showShimmerUpcoming()
                     }
                     is Result.HasData -> {
                         refreshUpcomingAdapter(it.data.results)
+                        binding.showUpcoming = true
                         initUpcomingSwipeScheduler()
                     }
                 }
@@ -138,8 +131,60 @@ class HomeFragment : Fragment() {
             })
     }
 
+    fun onButtonTechnicalSupportClicked() {
+        isClicked = !isClicked
+        if (isClicked){
+            fabShowIn(binding.fabChat)
+            fabShowIn(binding.fabPhone)
+        }else {
+            fabShowOut(binding.fabChat)
+            fabShowOut(binding.fabPhone)
+        }
+    }
+
+    fun fabShowIn(view: View) {
+        val show_fab: Animation = AnimationUtils.loadAnimation(activity, R.animator.anim_fab_show)
+        view.visibility = View.VISIBLE
+        view.alpha = 0f
+        view.startAnimation(show_fab)
+        view.translationY = view.height.toFloat()
+        view.animate()
+            .setDuration(200)
+            .translationY(0f)
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    super.onAnimationEnd(animation)
+                }
+            })
+            .alpha(1f)
+            .start()
+    }
+
+    fun fabShowOut(view: View) {
+        val out_fab: Animation = AnimationUtils.loadAnimation(activity, R.animator.anim_fab_out)
+        view.visibility = View.VISIBLE
+        view.alpha = 1f
+        view.translationY = 0f
+        view.startAnimation(out_fab)
+        view.animate()
+            .setDuration(200)
+            .translationY(view.height.toFloat())
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    view.visibility = View.GONE
+                    super.onAnimationEnd(animation)
+                }
+            }).alpha(0f)
+            .start()
+    }
+
     private fun showDataNowPlaying() {
         binding.showNowPlaying = true
+    }
+
+    private fun showShimmerUpcoming() {
+        binding.showUpcoming = false
+        binding.shimmerUpcoming.startShimmer()
     }
 
     private fun showShimmerNowPlaying() {
@@ -148,7 +193,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerview() {
-        adapter = NowPlayingAdapter(listOf())
+        adapter = NowPlayingAdapter(listOf(), this)
         binding.rvNowPlaying.adapter = adapter
     }
 
@@ -160,7 +205,6 @@ class HomeFragment : Fragment() {
         adapter.refreshData(data)
     }
 
-
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
@@ -169,5 +213,10 @@ class HomeFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         compositeDisposable.dispose()
+    }
+
+    override fun onNowPlayingClicked(movieId: String) {
+        val action = HomeFragmentDirections.actionHomeToDetailLaunch(movieId)
+        findNavController().navigate(action)
     }
 }

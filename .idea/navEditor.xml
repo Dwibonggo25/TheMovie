@@ -20,6 +20,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="favoriteFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1172" />
+                            <option name="y" value="-252" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="homeFragment">
                     <value>
                       <LayoutPositions>
@@ -31,6 +43,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="actionHomeToDetailLaunch">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="popularMoviesFragmentLaunch">
                               <value>
                                 <LayoutPositions />
@@ -55,6 +72,15 @@
                             <option name="y" value="324" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="actionPopularToDetailMoviesFragmentLaunch">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -78,6 +104,15 @@
                             <option name="x" value="815" />
                             <option name="y" value="-2" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="actionTopRatedToDetailMoviesLaunch">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

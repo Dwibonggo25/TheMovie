@@ -19,3 +19,19 @@ fun loadImageView(imageView: ImageView, url: String?) {
             .into(imageView)
     }
 }
+
+@BindingAdapter("imageFromDrawable")
+fun loadImageView(imageView: ImageView, url: Int?) {
+    if (url != 0){
+        Glide.with(imageView.context)
+            .load(url)
+            .into(imageView)
+    }else {
+        Glide.with(imageView.context)
+            .load(R.drawable.ic_no_photo)
+            .into(imageView)
+    }
+}
+
+
+

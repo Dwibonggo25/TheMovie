@@ -12,6 +12,9 @@
         <variable
             name="showNowPlaying"
             type="Boolean" />
+        <variable
+            name="showUpcoming"
+            type="Boolean" />
     </data>
 
     <ScrollView
@@ -21,32 +24,94 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <include
-                layout="@layout/content_menu_search"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabChat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/contentHeaderMovies" />
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:fabSize="mini"
+                app:backgroundTint="@color/blue_100"
+                app:layout_constraintBottom_toTopOf="@+id/floatingActionButton2"
+                app:layout_constraintEnd_toEndOf="@+id/floatingActionButton2"
+                app:layout_constraintStart_toStartOf="@+id/floatingActionButton2"
+                app:srcCompat="@drawable/ic_chat" />
 
-            <include
-                android:id="@+id/contentHeaderMovies"
-                layout="@layout/content_upcoming_movies"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:fabSize="mini"
+                app:backgroundTint="@color/blue_100"
+                app:layout_constraintBottom_toTopOf="@+id/fabChat"
+                app:layout_constraintEnd_toEndOf="@+id/floatingActionButton2"
+                app:layout_constraintStart_toStartOf="@+id/floatingActionButton2"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                app:backgroundTint="@color/blue_100"
+                android:onClick="@{() -> fragment.onButtonTechnicalSupportClicked()}"
+                android:src="@drawable/ic_technical_support"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    layout="@layout/content_menu_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:visibility="@{showUpcoming ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/contentHeaderMovies" />
+
+                <include
+                    android:id="@+id/contentHeaderMovies"
+                    layout="@layout/content_upcoming_movies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{showUpcoming ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerUpcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{showUpcoming ? View.GONE : View.VISIBLE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <include layout="@layout/shimmer_upcoming" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/contentHeaderMovies">
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
                 <TextView
                     android:id="@+id/textView"
@@ -55,7 +120,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="Now Playing"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

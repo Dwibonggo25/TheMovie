@@ -2,12 +2,11 @@ package com.example.jetpack
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.jetpack.db.User
-import com.example.jetpack.db.UserDao
+import com.example.jetpack.db.Favorite
+import com.example.jetpack.db.FavoriteDao
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [Favorite::class], version = 2)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun userDao(): UserDao
-
+    abstract fun favoriteDao(): FavoriteDao
 }

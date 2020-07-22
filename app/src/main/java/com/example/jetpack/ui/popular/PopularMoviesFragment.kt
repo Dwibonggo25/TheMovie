@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jetpack.R
 import com.example.jetpack.Result
@@ -17,7 +18,7 @@ import com.example.jetpack.model.ListMovies
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-class PopularMoviesFragment : Fragment() {
+class PopularMoviesFragment : Fragment() , PopularMoviesAdapter.OnPuplarMoviesClick{
 
     private lateinit var binding : FragmentPopularMoviesBinding
 
@@ -62,7 +63,7 @@ class PopularMoviesFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        adapter = PopularMoviesAdapter(listOf())
+        adapter = PopularMoviesAdapter(listOf(), this)
         val layoutManager = LinearLayoutManager(activity)
         binding.rvMoviesPopular.layoutManager = layoutManager
         binding.rvMoviesPopular.adapter = adapter
@@ -76,5 +77,10 @@ class PopularMoviesFragment : Fragment() {
 
     private fun refreshAdapter(data: List<ListMovies>){
         adapter.refreshData(data)
+    }
+
+    override fun onItemMoviesClcik(movieId: String) {
+        val action = PopularMoviesFragmentDirections.actionPopularToDetailMoviesFragmentLaunch(movieId)
+        findNavController().navigate(action)
     }
 }

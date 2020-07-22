@@ -2,10 +2,8 @@ package com.example.jetpack.di.module
 
 import com.example.jetpack.AppDatabase
 import com.example.jetpack.api.ApiService
-import com.example.jetpack.repository.DetailMoviesRepository
-import com.example.jetpack.repository.HomeRepository
-import com.example.jetpack.repository.PopularMoviesRepository
-import com.example.jetpack.repository.TopRatedRepository
+import com.example.jetpack.db.FavoriteDao
+import com.example.jetpack.repository.*
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -15,7 +13,7 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providesUserDao (db: AppDatabase) = db.userDao()
+    fun providesUserDao (db: AppDatabase) = db.favoriteDao()
 
     @Provides
     @Singleton
@@ -31,5 +29,10 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providesDetailMoviesRepository(apiService: ApiService): DetailMoviesRepository = DetailMoviesRepository(apiService)
+    fun providesDetailMoviesRepository(apiService: ApiService,favorite: FavoriteDao): DetailMoviesRepository = DetailMoviesRepository(apiService,favorite)
+
+    @Provides
+    @Singleton
+    fun providesFavoriteRepository(apiService: ApiService,favorite: FavoriteDao): FavoriteRepository = FavoriteRepository(apiService,favorite)
+
 }

@@ -60,4 +60,5 @@ class HomeMoviesAdapter(var movies : List<UpcomingData>, val context: Context) :
         this.movies = movies
         notifyDataSetChanged()
     }
+
 }

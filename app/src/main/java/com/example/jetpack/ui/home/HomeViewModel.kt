@@ -1,14 +1,11 @@
 package com.example.jetpack.ui.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.jetpack.Result
 import com.example.jetpack.base.BaseViewmodel
-import com.example.jetpack.model.NowPlayingData
 import com.example.jetpack.model.NowPlayingMoviesResponse
-import com.example.jetpack.model.TvMoviesResponse
 import com.example.jetpack.model.UpcomingResponse
 import com.example.jetpack.repository.HomeRepository
 import kotlinx.coroutines.Dispatchers

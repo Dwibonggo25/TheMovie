@@ -8,11 +8,11 @@ import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.jetpack.databinding.ActivityMainBinding
+import com.example.jetpack.ui.detailmovies.DetailMoviesFragment
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
@@ -20,7 +20,7 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
+class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, DetailMoviesFragment.OnSetTitleToollbar {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<androidx.fragment.app.Fragment>
@@ -89,8 +89,13 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                 }
                 R.id.detailMoviesFragment -> {
                     showBottomNavigation(true)
-                    showToolbar(false)
-                    showToolbarBackArrow(false)
+                    showToolbar(true)
+                    showToolbarBackArrow(true)
+                }
+                R.id.favoriteFragment -> {
+                    showBottomNavigation(true)
+                    showToolbar(true)
+                    showToolbarBackArrow(true)
                 }
                 else -> {
                     showBottomNavigation(true)
@@ -114,6 +119,10 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         if (shouldShow) supportActionBar?.setDisplayHomeAsUpEnabled(true) else supportActionBar?.setDisplayHomeAsUpEnabled(
             false
         )
+    }
+
+    private fun changeToolbarSubtitle(subtitle: String?) {
+        supportActionBar?.title = subtitle
     }
 
     private fun initBinding() {
@@ -142,7 +151,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
             }
             .setNegativeButton(android.R.string.no) { dialogInterface, i -> dialogInterface.dismiss()  }
             .show()
-
     }
 
     override fun onSupportNavigateUp() = navController.navigateUp()
@@ -150,6 +158,10 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     override fun onDestroy() {
         super.onDestroy()
         compositeDisposable.dispose()
+    }
+
+    override fun getTitleToollbar(title: String) {
+        changeToolbarSubtitle(title)
     }
 }
 

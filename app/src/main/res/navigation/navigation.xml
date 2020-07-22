@@ -24,6 +24,9 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action
+            android:id="@+id/actionHomeToDetailLaunch"
+            app:destination="@id/detailMoviesFragment" />
     </fragment>
     <fragment
         android:id="@+id/popularMoviesFragment"
@@ -51,10 +54,15 @@
     <fragment
         android:id="@+id/detailMoviesFragment"
         android:name="com.example.jetpack.ui.detailmovies.DetailMoviesFragment"
-        android:label="fragment_detail_movies"
+        android:label="Detail Movies"
         tools:layout="@layout/fragment_detail_movies" >
         <argument
             android:name="movieId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.jetpack.ui.favorite.FavoriteFragment"
+        android:label="Rak Film"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>
