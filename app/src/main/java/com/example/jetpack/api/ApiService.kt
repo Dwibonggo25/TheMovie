@@ -20,6 +20,9 @@ interface ApiService {
     @GET("movie/upcoming")
     suspend fun fetchUpcomingMovies (@Query("api_key") apiKey: String) : UpcomingResponse
 
+    @GET("movie/popular")
+    fun fetchMoviewFilm (@Query("api_key") apiKey: String) : Observable<MoviesResponse>
+
     @GET("movie/{movie_id}}")
     suspend fun fetchDetailMovies ( @Path("movie_id") movieId: String, @Query("api_key") apiKey: String) : DetailMoviesResponse
 }

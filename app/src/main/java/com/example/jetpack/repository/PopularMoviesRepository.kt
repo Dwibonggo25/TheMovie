@@ -10,8 +10,6 @@ import javax.inject.Inject
 
 class PopularMoviesRepository @Inject constructor(private val api: ApiService) {
 
-
     fun fetchPopularMovie() : Observable <MoviesResponse> = api.fetchPopularMovie(API_KEY)
-
 
 }
