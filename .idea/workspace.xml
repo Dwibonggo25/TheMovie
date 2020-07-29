@@ -6,13 +6,11 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da13ba5c-d1a1-4488-a736-70129bc590c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TheMovie-master.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Jetpack.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Movie" beforeDir="false" afterPath="$PROJECT_DIR$/../Movie" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MyUnitTesting" beforeDir="false" afterPath="$PROJECT_DIR$/../MyUnitTesting" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TaskDicodingKotlinPart1" beforeDir="false" afterPath="$PROJECT_DIR$/../TaskDicodingKotlinPart1" afterDir="false" />
@@ -20,12 +18,30 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/api/ApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/api/ApiService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/repository/PopularMoviesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/repository/PopularMoviesRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/rv_item_movies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/db/Favorite.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/db/Favorite.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/db/FavoriteDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/db/FavoriteDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/repository/FavoriteRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/repository/FavoriteRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/detailmovies/DetailMoviesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/detailmovies/DetailMoviesFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/detailmovies/DetailMoviesViewmodel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/detailmovies/DetailMoviesViewmodel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/detailmovies/ProductionCompanyAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/detailmovies/ProductionCompanyAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/favorite/FavoriteAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/favorite/FavoriteAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/favorite/FavoriteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/favorite/FavoriteFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/favorite/FavoriteViewmodel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/favorite/FavoriteViewmodel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/button_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/button_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_movies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_movies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/rv_item_favorite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/rv_item_favorite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/rv_item_production_company.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/rv_item_production_company.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/navigation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TheMovie/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../TheMovie/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../autosales-android" beforeDir="false" afterPath="$PROJECT_DIR$/../autosales-android" afterDir="false" />
@@ -64,8 +80,8 @@
         <option value="JUnit4 Test Class" />
         <option value="Kotlin File" />
         <option value="Kotlin Object" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -88,7 +104,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_28" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-22T08:16:09.901Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-28T02:34:48.319Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
@@ -96,7 +112,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="memory.settings.postsync.last.time.stamp" value="1595470319735" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1595989682742" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -107,14 +123,21 @@
       <recent name="com.example.jetpack.ui.favorite" />
       <recent name="com.example.jetpack.ui.profile" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.example.jetpack.ui.movies" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.example.jetpack.utils" />
       <recent name="com.example.jetpack.ui.tvshows" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/test/java/com/example/jetpack" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/animator" />
@@ -122,12 +145,6 @@
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/tvshows" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/movies" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-      <recent name="$PROJECT_DIR$/app/src/test/java/com/example/jetpack" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/jetpack/utils" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -250,10 +267,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add repository" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="483" y="173" key="#com.intellij.ide.util.MemberChooser" timestamp="1595402500481">
+    <state x="483" y="173" key="#com.intellij.ide.util.MemberChooser" timestamp="1595910111667">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="483" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1595402500481" />
+    <state x="483" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1595910111667" />
     <state x="41" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595297900022">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -270,94 +287,84 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="406" y="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1595299499138" />
-    <state x="308" y="212" key="AndroidCreateResourceFileDialog" timestamp="1595392506611">
+    <state x="308" y="212" key="AndroidCreateResourceFileDialog" timestamp="1595488282897">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="308" y="212" key="AndroidCreateResourceFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1595392506611" />
+    <state x="308" y="212" key="AndroidCreateResourceFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1595488282897" />
     <state x="226" y="52" key="CommitChangelistDialog2" timestamp="1594781610892">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="226" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1594781610892" />
-    <state width="1398" height="203" key="GridCell.Tab.0.bottom" timestamp="1595413620270">
+    <state width="1398" height="303" key="GridCell.Tab.0.bottom" timestamp="1595925014453">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="203" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595413620270" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.836@0.23.1440.836" timestamp="1595406024753" />
-    <state width="1398" height="203" key="GridCell.Tab.0.center" timestamp="1595413620269">
+    <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595925014453" />
+    <state width="1398" height="203" key="GridCell.Tab.0.bottom/0.23.1440.836@0.23.1440.836" timestamp="1595924850898" />
+    <state width="1398" height="303" key="GridCell.Tab.0.center" timestamp="1595925014452">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="203" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595413620269" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.836@0.23.1440.836" timestamp="1595406024744" />
-    <state width="1398" height="203" key="GridCell.Tab.0.left" timestamp="1595413620269">
+    <state width="1398" height="303" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595925014452" />
+    <state width="1398" height="203" key="GridCell.Tab.0.center/0.23.1440.836@0.23.1440.836" timestamp="1595924850896" />
+    <state width="1398" height="303" key="GridCell.Tab.0.left" timestamp="1595925014452">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="203" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595413620269" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.836@0.23.1440.836" timestamp="1595406024737" />
-    <state width="1398" height="203" key="GridCell.Tab.0.right" timestamp="1595413620270">
+    <state width="1398" height="303" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595925014452" />
+    <state width="1398" height="203" key="GridCell.Tab.0.left/0.23.1440.836@0.23.1440.836" timestamp="1595924850893" />
+    <state width="1398" height="303" key="GridCell.Tab.0.right" timestamp="1595925014453">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="203" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595413620270" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.836@0.23.1440.836" timestamp="1595406024751" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1595403352881">
+    <state width="1398" height="303" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595925014453" />
+    <state width="1398" height="203" key="GridCell.Tab.0.right/0.23.1440.836@0.23.1440.836" timestamp="1595924850897" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1595925014455">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595403352881" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595925014455" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.23.1440.836@0.23.1440.836" timestamp="1594787611318" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1595403352880">
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1595925014454">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1595403352880" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1595925014454" />
     <state width="1398" height="303" key="GridCell.Tab.1.center/0.23.1440.836@0.23.1440.836" timestamp="1594787611317" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1595403352880">
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1595925014454">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1595403352880" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1595925014454" />
     <state width="1398" height="303" key="GridCell.Tab.1.left/0.23.1440.836@0.23.1440.836" timestamp="1594787611317" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1595403352881">
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1595925014454">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1595403352881" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1595925014454" />
     <state width="1398" height="303" key="GridCell.Tab.1.right/0.23.1440.836@0.23.1440.836" timestamp="1594787611318" />
     <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1594781627312">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1594781627312" />
-    <state x="369" y="288" key="com.intellij.ide.util.TipDialog" timestamp="1595470434940">
+    <state x="369" y="288" key="com.intellij.ide.util.TipDialog" timestamp="1595989676458">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="369" y="288" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1595470434940" />
+    <state x="369" y="288" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1595989676458" />
     <state x="369" y="288" key="com.intellij.ide.util.TipDialog/0.23.1440.836@0.23.1440.836" timestamp="1595382259903" />
     <state x="393" y="247" key="git4idea.merge.GitPullDialog" timestamp="1595413486640">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="393" y="247" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1595413486640" />
-    <state x="385" y="196" key="search.everywhere.popup" timestamp="1595389153611">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1595477140960">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595389153611" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595477140960" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/toprated/TopRatedViewmodel.kt</url>
-          <line>26</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/detailmovies/DetailMoviesViewmodel.kt</url>
-          <line>37</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jetpack/utils/Extension.kt</url>
-          <line>9</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/popular/PopularMoviesViewmodel.kt</url>
           <line>27</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jetpack/ui/favorite/FavoriteViewmodel.kt</url>
+          <line>24</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

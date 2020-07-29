@@ -14,13 +14,15 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:id="@+id/cardFavoriteMovies"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
             android:elevation="4dp"
+            app:cardCornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,16 +30,18 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/ivPosterMovies"
                     imageFromUrl="@{movies.urlPoster}"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@drawable/bg_rounded"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:srcCompat="@tools:sample/avatars" />
@@ -47,84 +51,73 @@
                     style="@style/AppTheme.Text.Title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:text="@{movies.title}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/ivPosterMovies"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ivPosterMovies"
+                    app:layout_constraintStart_toStartOf="@+id/ivPosterMovies"
+                    app:layout_constraintTop_toBottomOf="@+id/ivPosterMovies"
                     tools:text="The Call of the Wild" />
 
                 <ImageView
                     android:id="@+id/ivRates"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/ic_rate"
-                    app:layout_constraintStart_toEndOf="@+id/ivPosterMovies"
-                    app:layout_constraintTop_toBottomOf="@+id/tvTitleMovies" />
-
-                <TextView
-                    android:id="@+id/tvReleaseDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/textview_rounded"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:text="@{movies.dateReleased}"
-                    android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="@+id/ivRates"
-                    app:layout_constraintTop_toBottomOf="@+id/ivRates"
-                    tools:text="Release Date" />
-
-                <TextView
-                    android:id="@+id/tvOriginalTitle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/textview_rounded"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:text="@{movies.originalTitle}"
-                    android:textColor="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tvReleaseDate"
-                    app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate"
-                    tools:text="Original Title" />
-
-                <TextView
-                    android:id="@+id/tvPreview"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:maxLines="2"
-                    android:text="@{movies.overview}"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tvOriginalTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOriginalTitle" />
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/button"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRate"
+                    app:layout_constraintTop_toTopOf="@+id/button"
+                    app:srcCompat="@drawable/ic_rate" />
 
                 <TextView
                     android:id="@+id/tvRate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:text="@{movies.vote}"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/ivRates"
-                    app:layout_constraintStart_toEndOf="@+id/ivRates"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTitleMovies"
                     app:layout_constraintTop_toTopOf="@+id/ivRates" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{movies.vote}"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitleMovies"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleMovies" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="87dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_round"
+                    android:text="@{movies.genre}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView30"
+                    app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+                <ImageView
+                    android:id="@+id/ivDeleteFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/ivRates"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_trash" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="205dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -64,5 +64,9 @@
         android:id="@+id/favoriteFragment"
         android:name="com.example.jetpack.ui.favorite.FavoriteFragment"
         android:label="Rak Film"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/onFavoriteToDetailMoviesClicked"
+            app:destination="@id/detailMoviesFragment" />
+    </fragment>
 </navigation>

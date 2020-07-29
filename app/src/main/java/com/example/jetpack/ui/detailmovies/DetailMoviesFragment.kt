@@ -30,7 +30,11 @@ class DetailMoviesFragment : Fragment() {
 
     private lateinit var titleToolbar : OnSetTitleToollbar
 
-    private lateinit var companyAdapter: ProductionCompanyAdapter
+    private val companyAdapter by lazy {
+        ProductionCompanyAdapter { position: Int, item: ProductionCompany ->
+            binding.rvCompany.smoothScrollToPosition(position)
+        }
+    }
 
     private var movieId: String = ""
 
@@ -95,8 +99,8 @@ class DetailMoviesFragment : Fragment() {
     }
 
     private fun initCompanyRecyclerView() {
-        companyAdapter = ProductionCompanyAdapter(listOf())
-        binding.rvCompany.adapter = companyAdapter
+        binding.rvCompany.initialize(companyAdapter)
+        binding.rvCompany.setViewsToChangeColor(listOf(R.id.ivCompanyLogo, R.id.tvCompanty))
     }
 
     override fun onAttach(context: Context) {

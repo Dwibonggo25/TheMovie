@@ -62,12 +62,13 @@ class DetailMoviesViewmodel @Inject constructor(private val repository: DetailMo
     fun saveDataFavoriteMovies () {
         viewModelScope.launch(Dispatchers.IO) {
             try {
+                var genre = movies.get()!!.genres.get(0).name
                 if(isFavorite.get() != true){
                     isFavorite.set(true)
-                    repository.saveDataFavorite(Favorite(movies.get()!!.id, movies.get()!!.title, movies.get()!!.release_date, movies.get()!!.poster_path, movies.get()!!.vote_average.toString(),movies.get()!!.original_title, movies.get()!!.overview, 1))
+                    repository.saveDataFavorite(Favorite(movies.get()!!.id, movies.get()!!.title, movies.get()!!.release_date, movies.get()!!.poster_path, movies.get()!!.vote_average.toString(),movies.get()!!.original_title, movies.get()!!.overview, genre, 1))
                 }else{
                     isFavorite.set(false)
-                    repository.saveDataFavorite(Favorite(movies.get()!!.id, movies.get()!!.title, movies.get()!!.release_date, movies.get()!!.poster_path, movies.get()!!.vote_average.toString(),movies.get()!!.original_title, movies.get()!!.overview,0))
+                    repository.saveDataFavorite(Favorite(movies.get()!!.id, movies.get()!!.title, movies.get()!!.release_date, movies.get()!!.poster_path, movies.get()!!.vote_average.toString(),movies.get()!!.original_title, movies.get()!!.overview, genre,0))
                 }
             }catch (e: Exception) {
 

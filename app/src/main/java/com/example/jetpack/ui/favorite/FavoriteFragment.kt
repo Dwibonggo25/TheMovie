@@ -5,10 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.jetpack.R
 import com.example.jetpack.Result
 import com.example.jetpack.databinding.FragmentFavoriteBinding
@@ -16,7 +19,7 @@ import com.example.jetpack.db.Favorite
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-class FavoriteFragment : Fragment() {
+class FavoriteFragment : Fragment() , FavoriteAdapter.OnFavoriteMoviesListener{
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -42,30 +45,48 @@ class FavoriteFragment : Fragment() {
 
         initRecycleview()
         viewModel.fetchAllDataInFavorite()
-
         viewModel.dataMovies.observe(this, Observer {
             it?.let {
                 when(it){
                     is Result.HasData ->{
                         refreshAdapter(it.data)
                     }
-
+                    is Result.NoData ->{
+                        refreshAdapter(emptyList())
+                        Toast.makeText(activity, "gak ada data", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         })
+
     }
 
     private fun initRecycleview (){
-        adapter = FavoriteAdapter(listOf())
+        adapter = FavoriteAdapter( this)
         binding.rvFavorite.adapter = adapter
     }
 
     private fun refreshAdapter(data: List<Favorite>){
-        adapter.refreshData(data)
+        adapter.submitList(data)
     }
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
+    }
+
+    override fun onDetailMovieClick(id: Int) {
+        val action = FavoriteFragmentDirections.onFavoriteToDetailMoviesClicked(id.toString())
+        findNavController().navigate(action)
+    }
+
+    override fun onDeleteOnFavoriteClciked(id: Int) {
+        AlertDialog.Builder(requireActivity())
+            .setTitle("Yakin")
+            .setMessage("Yakin sekali")
+            .setPositiveButton(android.R.string.ok) { _, _ ->  viewModel.deleteDataInFavorite(id) }
+            .setNegativeButton(android.R.string.no) { dialog, _ -> dialog.dismiss() }
+            .show()
+
     }
 }

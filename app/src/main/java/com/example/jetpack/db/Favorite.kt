@@ -28,8 +28,11 @@ data class Favorite (
     @ColumnInfo (name = "overview")
     val overview: String?,
 
+    @ColumnInfo (name = "genre")
+    val genre: String?,
+
     @ColumnInfo (name = "type")
     val type: Int?
 ){
-    constructor(): this(0,"","","","","","",0)
+    constructor(): this(0,"","","","","","","",0)
 }

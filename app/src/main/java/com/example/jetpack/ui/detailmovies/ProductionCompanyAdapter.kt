@@ -8,7 +8,9 @@ import com.example.jetpack.databinding.RvItemProductionCompanyBinding
 import com.example.jetpack.model.NowPlayingData
 import com.example.jetpack.model.ProductionCompany
 
-class ProductionCompanyAdapter (private var model: List<ProductionCompany>) : RecyclerView.Adapter<ProductionCompanyAdapter.Viewholder>() {
+class ProductionCompanyAdapter (val itemClick: (position:Int,model: ProductionCompany) -> Unit) : RecyclerView.Adapter<ProductionCompanyAdapter.Viewholder>() {
+
+    private var items: List<ProductionCompany> = listOf()
 
     class Viewholder (val binding: RvItemProductionCompanyBinding ) :RecyclerView.ViewHolder (binding.root){
 
@@ -24,13 +26,12 @@ class ProductionCompanyAdapter (private var model: List<ProductionCompany>) : Re
         return Viewholder(binding)
     }
 
-    override fun getItemCount(): Int = model.size
+    override fun getItemCount(): Int = items.size
 
-    override fun onBindViewHolder(holder: Viewholder, position: Int) = holder.bind(model[position])
+    override fun onBindViewHolder(holder: Viewholder, position: Int) = holder.bind(items[position])
 
     fun refreshData(data : List<ProductionCompany>) {
-        model = data
+        items = data
         notifyDataSetChanged()
     }
-
 }
