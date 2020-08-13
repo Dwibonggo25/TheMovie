@@ -44,9 +44,7 @@ class FavoriteAdapter ( private var listener: OnFavoriteMoviesListener ) : ListA
             override fun areContentsTheSame(oldItem: Favorite, newItem: Favorite): Boolean {
                 return oldItem == newItem
             }
-
         }
-
     }
 
     interface OnFavoriteMoviesListener{

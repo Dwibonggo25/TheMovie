@@ -7,3 +7,5 @@ const val BASE_URL: String = "https://api.themoviedb.org/3/"
 const val DEFAULT_CONNECT_TIMEOUT: Long = 30000
 const val DEFAULT_READ_TIMEOUT: Long = 30000
 const val DEFAULT_WRITE_TIMEOUT: Long = 30000
+const val LOGIN_CODE = "login-code"
+const val MOVIE_CODE = "movie-code"

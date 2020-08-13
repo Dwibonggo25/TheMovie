@@ -53,7 +53,7 @@ class FavoriteFragment : Fragment() , FavoriteAdapter.OnFavoriteMoviesListener{
                     }
                     is Result.NoData ->{
                         refreshAdapter(emptyList())
-                        Toast.makeText(activity, "gak ada data", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Tidak ada film yang disimpan", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -87,6 +87,5 @@ class FavoriteFragment : Fragment() , FavoriteAdapter.OnFavoriteMoviesListener{
             .setPositiveButton(android.R.string.ok) { _, _ ->  viewModel.deleteDataInFavorite(id) }
             .setNegativeButton(android.R.string.no) { dialog, _ -> dialog.dismiss() }
             .show()
-
     }
 }

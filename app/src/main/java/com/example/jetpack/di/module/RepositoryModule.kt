@@ -1,5 +1,6 @@
 package com.example.jetpack.di.module
 
+import android.content.SharedPreferences
 import com.example.jetpack.AppDatabase
 import com.example.jetpack.api.ApiService
 import com.example.jetpack.db.FavoriteDao
@@ -25,7 +26,7 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providesHomeRepository(apiService: ApiService): HomeRepository = HomeRepository(apiService)
+    fun providesHomeRepository(apiService: ApiService, preferences: SharedPreferences): HomeRepository = HomeRepository(apiService, preferences)
 
     @Provides
     @Singleton
