@@ -10,7 +10,7 @@ import com.example.jetpack.MOVIE_CODE
 import com.example.jetpack.api.ApiService
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor(private val api: ApiService, private var preferences: SharedPreferences,) {
+class HomeRepository @Inject constructor(private val api: ApiService, private var preferences: SharedPreferences) {
 
     suspend fun fetchNowPlaying() = api.fetchNowPlayingMovies(API_KEY)
 

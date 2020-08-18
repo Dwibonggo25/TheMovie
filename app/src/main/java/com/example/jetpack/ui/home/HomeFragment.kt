@@ -20,6 +20,7 @@ import com.example.jetpack.Result
 import com.example.jetpack.databinding.FragmentHomeBinding
 import com.example.jetpack.model.NowPlayingData
 import com.example.jetpack.model.UpcomingData
+import com.example.jetpack.notification.NotificationHelper
 import com.example.jetpack.utils.plusAssign
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.Observable
@@ -60,6 +61,8 @@ class HomeFragment : Fragment(), NowPlayingAdapter.OnNowPlayingPressed {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        NotificationHelper.displayOnPriorityChannel(context!!, "Bacot", "EE")
+
         viewmodel.fetchNowPlayingMovies()
         viewmodel.fetchUpcomingMovies()
 
@@ -77,7 +80,6 @@ class HomeFragment : Fragment(), NowPlayingAdapter.OnNowPlayingPressed {
                         }
                     }
                 }
-
             }
         )
 

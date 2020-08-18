@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.jetpack.databinding.ActivityMainBinding
 import com.example.jetpack.ui.detailmovies.DetailMoviesFragment
+import com.example.jetpack.utils.Menu
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
@@ -51,7 +52,25 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, DetailMovi
 
         setupToolbar()
         setupBottomNavigation()
+
+        handleDeeplinkData()
+
     }
+
+    private fun handleDeeplinkData() {
+        val extras = intent?.extras
+        if (extras?.getString(KEY_NEXT_ACTION_MENU_ID) != null) {
+            val nextActionMenuId = extras.getString(KEY_NEXT_ACTION_MENU_ID)
+            handleNotificationData(nextActionMenuId!! )
+        }
+    }
+
+    private fun handleNotificationData(menuId: String) {
+        when(menuId){
+            Menu.DETAIL_MOVIES.id -> navController.navigate(R.id.detailMoviesFragment)
+        }
+    }
+
 
     private fun setupBottomNavigation() {
         bottomNavigationView.setupWithNavController(navController)
@@ -163,5 +182,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, DetailMovi
     override fun getTitleToollbar(title: String) {
         changeToolbarSubtitle(title)
     }
+
 }
 

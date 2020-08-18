@@ -27,6 +27,7 @@ class PopularMoviesAdapter (private var listMovies : List<ListMovies>, private v
 
             binding.root.setOnClickListener {
                 listener.onItemMoviesClcik(model.id.toString())
+
             }
 
             binding.executePendingBindings()
