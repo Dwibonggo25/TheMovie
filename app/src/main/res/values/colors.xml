@@ -49,5 +49,7 @@
     <color name="blue_100">#6AECF4</color>
     <color name="blue_700">#EB6B8EF6</color>
 
+    <color name="bottombar_background">#B784A0F4</color>
+    <color name="bottomnav_item_color">@color/white</color>
 </resources>
 

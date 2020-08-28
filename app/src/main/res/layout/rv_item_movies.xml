@@ -122,9 +122,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/tvRates"
                     app:layout_constraintStart_toEndOf="@+id/tvRates"
                     app:layout_constraintTop_toTopOf="@+id/tvRates" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
